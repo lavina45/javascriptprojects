@@ -1,0 +1,17 @@
+.container{
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1000px;
+  background-color: black;
+}
+.row{
+display:flex;
+}
+
+.brick{
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  border-radius: 5px;
+  margin: 2px;
+}
