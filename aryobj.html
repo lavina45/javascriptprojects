@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_object</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <table cellpadding="2" cellspacing="2" border="1" bgcolor="green" width="40%" align="center">
+            <tr>
+                <th>Name</th>
+                <th width="20%">Age</th>
+                <th width="12%">gender</th>
+            </tr>
+            <tbody id="tableData"></tbody>
+        </table>
+        <script type="text/javascript">
+            var aryObj = [
+                {
+                    name: "aaru",
+                    age:  21,
+                    gender: "female"
+                },
+                {
+                    name: "aarushi",
+                    age:  23,
+                    gender: "female"
+                },
+                {
+                    name: "lavina",
+                    age:  24,
+                    gender: "female"
+                }
+            ];
+            var k = '<tbody>'
+            for(i = 0;i < aryObj.length; i++){
+                k+= '<tr>';
+                k+= '<td>' + aryObj[i].name + '</td>';
+                k+= '<td>' + aryObj[i].age + '</td>';
+                k+= '<td>' + aryObj[i].gender + '</td>';
+                k+= '</tr>';
+            }
+            k+='</tbody>';
+            document.getElementById('tableData').innerHTML = k;
+            document.write(aryObj.length);
+            const myJSON = JSON.stringify(aryObj);
+document.getElementById("demo").innerHTML = myJSON;
+            </script>
+</body>
+</html>
+ 
