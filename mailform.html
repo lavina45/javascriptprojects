@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="mail.js"></script>
+</head>
+<body>
+    <form method="POST">
+        Name <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" required="">
+        E-mail <input type="email" class="form-control" name="Sender" id="reciver" placeholder="Email"
+        required="">
+        Subject <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject"
+        required="">
+        Message <textarea name="Message" class="form-control" id="Message" placeholder="Message"
+        required=""></textarea>
+        Send <input type="button" onclick="sendEmail()" value="Send Email"/>
+    </form>
+</body>
+</html>
