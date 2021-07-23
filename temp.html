@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Template</title>
+    <script type="text/javascript">
+        function changeClass() {
+            document.getElementById('myButton').className = "I am Changed";
+            var button_class = document.getElementById('myButton').className;
+            document.getElementById('myPara').innerHTML = "New class name: " 
+            + button_class;
+        }
+    </script>
+</head>
+<body background = "3.jpg" width="100%">
+    <marquee behavior="alternate" bgcolor = "white" direction="right" loop="10" scrollamount="10" scrolldelay="4" width="100%" height="5%"><b><i> LAVINA &nbsp; AGGARWAL</i></b> </marquee>
+    <h3 onclick="change()">Hello world!!!</h3>
+    <p id = "l_UP" style =
+            "font-size: 16px; font-weight: bold;">     
+        </p>
+          
+        <button style="background: red" onclick = "l_Run()"> 
+            Click On Me
+        </button>
+          
+        <p id = "l_DOWN" style =
+            "color:green; font-size: 20px; font-weight: bold;">
+        </p>
+
+        <h2 id="myH2">Hello Miss</h2>
+       <p id="myP">How Can I Help You?</p>
+       <p id="myP2">This page is awesome</p>
+       <div id="myDiv">This is a good place.</div>
+       <br>
+       
+       <button type="button" style="background: green" onclick="myFunction()">Change text color</button>
+          
+        <script>
+            var el_up = document.getElementById("l_UP");
+            var el_down = document.getElementById("l_DOWN");
+            var str = "Click on button to change the background color";
+          
+            el_up.innerHTML = str;
+          
+            function changeColor(color) {
+                document.body.style.background = color;
+            }
+              
+            function l_Run() {
+                changeColor('yellow');
+                el_down.innerHTML = "Background Color changed";
+            } 
+            
+            function myFunction() {
+         document.getElementById("myH2").style.color = "#ff0000";
+         document.getElementById("myP").style.color = "magenta";
+         document.getElementById("myP2").style.color = "blue";
+         document.getElementById("myDiv").style.color = "lightblue";
+       }
+       function change()
+{
+  var para=document.getElementsByTagName("h3");
+  para[0].style.color="red";
+}
+        </script> 
+
+<h2>Change class name of element</h2>
+<button class="default" onclick="changeClass()" 
+            id="myButton">Click Me!</button><br>
+<p id="myPara" style ="color:red"><b>Old class name: Lavina Aggarwal</b></p>
+       
+
+</body>
+</html>
