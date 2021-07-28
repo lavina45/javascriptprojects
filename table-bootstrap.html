@@ -9,20 +9,20 @@
 </head>
 <body>
    
-    <table border width =20% >
+    <table class="table text-center" border width =20% >
         
             <tr>
                 <th>Name</th>
                 <th >Age</th>
                 <th>phone</th>
                 <th>gender</th>
+                <th> </th>
+                <th> </th>
 ​
             </tr>
         
             <tbody id="tableData"></tbody>
-            <button onclick = "rem()"> 
-                Delete
-            </button> 
+           
         </table>
         <script type="text/javascript">
             var a = [
@@ -97,21 +97,30 @@
                  
                  k+= '<td>' + a[i].phone + '</td>';
                 k+= '<td>' + a[i].gender + '</td>';
+                k+= '<td>' + '<button type="button" class="btn btn-primary">EDIT</button>' + '</td>';
+                k+= '<td>' + '<button type="button" class="btn btn-danger">Remove</button>' + '</td>';
                 k+= '</tr>';
             }
             k+='</tbody>';
             document.getElementById('tableData').innerHTML = k;
-            
-             
-            rem()
-            {
-            document.getElementsByTagName("tbody")[9].remove();
-            }
+    
 
 
 
             
            
             </script>
+            <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 </body>
 </html>
