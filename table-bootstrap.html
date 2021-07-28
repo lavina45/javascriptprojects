@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <table border width =20% >
+        
+            <tr>
+                <th>Name</th>
+                <th >Age</th>
+                <th>phone</th>
+                <th>gender</th>
+​
+            </tr>
+        
+            <tbody id="tableData"></tbody>
+            <button onclick = "rem()"> 
+                Delete
+            </button> 
+        </table>
+        <script type="text/javascript">
+            var a = [
+                {
+                    name: "bhawna",
+                    age:  21,
+                    phone:123456788,
+                    gender: "F"
+                },
+                {
+                    name: "lavina",
+                    age:  24,
+                    phone:123489388,
+                    gender: "F"
+                    
+                },
+                {
+                    name: "jay",
+                    age:  20,
+                    phone:123473473,
+                    gender: "M"
+                },
+                {
+                    name: "ram",
+                    age:  21,
+                    phone:1232839823,
+                    gender: "M"
+                },
+                {
+                    name: "amneet",
+                    age:  27,
+                    phone:12798327,
+                    gender: "F"
+                },
+                {
+                    name: "arru",
+                    age:  27,
+                    phone:123443,
+                    gender: "F"
+                },
+                {
+                    name: "lavi",
+                    age:  29,
+                    phone:128237,
+                    gender: "F"
+                },
+                {
+                    name: "namita",
+                    age:  19,
+                    phone:123443788,
+                    gender: "F"
+                },
+                {
+                    name: "avni",
+                    age:  21,
+                    phone:82193092,
+                    gender: "F"
+                },
+                {
+                    name: "ashi",
+                    age:  22,
+                    phone:1287398217,
+                    gender: "F"
+                }
+            ];
+            var k = '<tbody>'
+            for(i = 0;i < a.length; i++){
+                 k+= '<tr>';
+                k+= '<td>' + a[i].name + '</td>';
+                
+                 k+= '<td>' + a[i].age + '</td>';
+                 
+                 k+= '<td>' + a[i].phone + '</td>';
+                k+= '<td>' + a[i].gender + '</td>';
+                k+= '</tr>';
+            }
+            k+='</tbody>';
+            document.getElementById('tableData').innerHTML = k;
+            
+             
+            rem()
+            {
+            document.getElementsByTagName("tbody")[9].remove();
+            }
+
+
+
+            
+           
+            </script>
+</body>
+</html>
