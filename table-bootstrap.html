@@ -8,8 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-   
-    <table class="table text-center" border width =20% >
+    Name:<input type="text" name="fName" id="fName"><br><br>
+ Age:<input type="text" name="fAge" id="fAge"><br><br>
+  phone:<input type="text" name="fphone" id="fphone"><br><br>
+  gender:<input type="text" name="fgender" id="fgender"><br><br>
+        <button type="button" id="b1" onclick="final()">Save</button>
+    <table id="t1" class="table text-center" border width =20% >
         
             <tr>
                 <th>Name</th>
@@ -27,7 +31,7 @@
         <script type="text/javascript">
             var a = [
                 {
-                    name: "bhawna",
+                    name: "rani",
                     age:  21,
                     phone:123456788,
                     gender: "F"
@@ -97,18 +101,40 @@
                  
                  k+= '<td>' + a[i].phone + '</td>';
                 k+= '<td>' + a[i].gender + '</td>';
-                k+= '<td>' + '<button type="button" class="btn btn-primary">EDIT</button>' + '</td>';
-                k+= '<td>' + '<button type="button" class="btn btn-danger" onclick="rem(a[i])">Remove</button>' + '</td>';
+                k+= '<td>' + '<button type="button" class="btn btn-primary" onclick="edit(this)">EDIT</button>' + '</td>';
+                k+= '<td>' + '<button type="button" class="btn btn-danger" onclick="rem(this)"> Remove</button>' + '</td>';
                 k+= '</tr>';
             }
             k+='</tbody>';
             document.getElementById('tableData').innerHTML = k;
-    
-    function rem(no){
-        
-        document.getElementById()
-    }
 
+    function rem(td){
+        
+        row =td.parentElement.parentElement;
+        document.getElementById("t1").deleteRow(row.rowIndex);
+    }
+//edit the row
+    var table = document.getElementById("tableData"),rIndex;
+  for(var i = 0; i < table.rows.length; i++)
+  {
+      table.rows[i].onclick = function()
+      {
+          rIndex = this.rowIndex;
+          document.getElementById("fName").value = this.cells[0].innerHTML;
+          document.getElementById("fAge").value = this.cells[1].innerHTML;
+          document.getElementById("fphone").value = this.cells[2].innerHTML;
+          document.getElementById("fgender").value = this.cells[3].innerHTML;
+      };
+  }
+
+  // save the row
+  function final()
+  {   rIndex-=1;
+      table.rows[rIndex].cells[0].innerHTML = document.getElementById("fName").value;
+      table.rows[rIndex].cells[1].innerHTML = document.getElementById("fAge").value;
+      table.rows[rIndex].cells[2].innerHTML = document.getElementById("fphone").value;
+      table.rows[rIndex].cells[3].innerHTML = document.getElementById("fgender").value;
+  }
 
             
            
