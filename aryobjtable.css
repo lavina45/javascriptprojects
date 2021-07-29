@@ -1,0 +1,20 @@
+.form {
+    display: inline;
+    width: 20%;
+    /* height: 34px; */
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #submit {
+    text-align: center;
+  }
+  
+  .button {
+    position: absolute;
+  }

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>home page</title>
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body onkeypress="hello()">
+        <h1 onclick="change()">BIBLIOPHILE</h1>>
+        <div class="container">
+         <p>1.JavaScript is the world's most popular programming language.</p>
+         <p>2.JavaScript is the programming language of the Web.</p>
+         <p>3.JavaScript is easy to learn.</p>
+         <button onclick="func()" id="b2">Click here to change the background color</button>
+        </div>
+<button onclick="display()" id="b1">Click me</button>
+<p id="demo" onmouseover="view()" onmouseout="viewback()"></p>
+<script>
+function display() {
+  document.getElementById("demo").innerHTML = "Click here to change the text color";
+}
+function view() {
+  document.getElementById("demo").style.color = "red";
+}
+function viewback() {
+  document.getElementById("demo").style.color = "black";
+}
+function func() {
+ var x=document.getElementsByClassName("container");
+ x[0].style.backgroundColor = "yellow";
+}
+function hello() {
+ alert("hello");
+}
+function change()
+{
+  var para=document.getElementsByTagName("h1");
+  para[0].style.color="red";
+}
+        </script>
+    </body>
+</html>
+white_check_mark
+eyes
+raised_hands
+React
+Reply
+

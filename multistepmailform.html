@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="multimail.js"></script>
+    <section>
+        <style>
+            * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Montserrat";
+    }
+    section {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: aliceblue;
+    }
+    .container {
+      max-width: 400px;
+      width: 90%;
+      padding: 20px;
+      box-shadow: 0px 0px 20px #00000020;
+      border-radius: 8px;
+      background-color: white;
+    }
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+    }
+    .form-group {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .form-group input {
+      width: 100%;
+      border: 1.5px solid rgba(128, 128, 128, 0.418);
+      padding: 5px;
+      font-size: 18px;
+      margin-top: 5px;
+      border-radius: 4px;
+    }
+    button.next-btn,
+    button.previous-btn,
+    button.submit-btn {
+      float: right;
+      margin-top: 20px;
+      padding: 10px 30px;
+      border: none;
+      outline: none;
+      background-color: rgb(180, 220, 255);
+      font-family: "Montserrat";
+      font-size: 18px;
+      cursor: pointer;
+      /* text-align: right; */
+    }
+    button.previous-btn {
+      float: left;
+    }
+    button.submit-btn {
+      background-color: aquamarine;
+    }
+        </style>
+        <div class="container">
+          <form  method="post">
+            <div class="step step-1 active">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="first-name">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="last-name">
+              </div>
+              <div class="form-group">
+                <label for="nickName">Gender</label>
+                <input type="text" id="dob" name="dateofbirth">
+              </div>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+            <div class="step step-2">
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Mobile</label>
+                <input type="text" id="phone" name="phone-number">
+              </div>
+              <button type="button" class="previous-btn">Prev</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+            <div class="step step-3">
+              <div class="form-group">
+                <label for="country">country</label>
+                <input type="text" id="country" name="country">
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+              </div>
+              <div class="form-group">
+                <label for="postCode">Post-Code</label>
+                <input type="text" id="postCode" name="post-code">
+              </div>
+              <button type="button" class="previous-btn">Prev</button>
+              <button type="button" onclick="show()"class="next-btn">Next</button>
+            </div>
+            <div class="step step-4">
+                <div>
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" id="fName" value="" >
+                      </div>
+                      <div >
+                        <label >Last Name</label>
+                        <input type="text" id="lName" value="" >
+                      </div>
+                      <div >
+                        <label >Gender</label>
+                        <input type="text" id="dobi" value="">
+                      </div>
+                      <div >
+                        <label >E-mail</label>
+                        <input type="text" id="em" >
+                      </div>
+                      <div >
+                        <label >Mobile</label>
+                        <input type="text" id="ph" value="" >
+                      </div>
+                      <div >
+                        <label >country</label>
+                        <input type="text" id="co" value="">
+                      </div>
+                      <div >
+                        <label >City</label>
+                        <input type="text" id="ci" value="">
+                      </div>
+                      <div >
+                        <label >Post-Code</label>
+                        <input type="text" id="pco" value="" >
+                      </div>
+                      <button type="button" class="previous-btn">Prev</button>
+                <button type="submit" class="submit-btn" onclick="sendmail()">Submit</button>
+    </div>
+            </div>
+          </form>
+        </div>
+        <script>
+            var z;
+    const steps = Array.from(document.querySelectorAll("form .step"));
+    const nextBtn = document.querySelectorAll("form .next-btn");
+    // const nex= document.querySelectorAll("form .nex");
+    const prevBtn = document.querySelectorAll("form .previous-btn");
+    const form = document.querySelector("form");
+    function show(){
+// let c = sessionStorage.getItem("lnm")
+//  document.getElementById("lname").value=c;
+let b= sessionStorage.getItem("fnm");
+ document.getElementById("fName").value=b
+ let c= sessionStorage.getItem("lnm");
+ document.getElementById("lName").value=c
+let d= sessionStorage.getItem("dob")
+let e= sessionStorage.getItem("email")
+let f = sessionStorage.getItem("phone")
+let g = sessionStorage.getItem("country")
+let h = sessionStorage.getItem("city")
+let i = sessionStorage.getItem("pc")
+    document.getElementById("dobi").value=d;
+    document.getElementById("em").value=e;
+    document.getElementById("ph").value=f;
+    document.getElementById("co").value=g;
+    document.getElementById("ci").value=h;
+    document.getElementById("pco").value=i;
+    var z= 'first name :'+b+'<br> last name :'+c+'<br> dob :'+d+'<br> email :'+e+'<br> phone number :'+f+'<br> country :'+g+'<br> city :'+h+'<br> postal code:'+i;
+console.log(z)
+let y = sessionStorage.setItem("all",z)
+let x = sessionStorage.getItem("all")
+    }
+    // function final(){
+    //     document.write(`First name:${b}
+    //  Lastname:${c}
+    //  date of birth :${d}
+    //  email:${e}
+    //  phone:${f}
+    //     country:${g}
+    //     city:${h}
+    //     postcode:${i}
+    //    `)
+    // }
+    //     nex.forEach((button) => {
+    //   button.addEventListener("click", () => {
+    //     changeStep("next");
+    // });
+    // });
+    // .then(function final(){
+    // console.log(`First name:${b}
+    //     Lastname:${c}
+    //     date of birth :${d}
+    //     email:${e}
+    //     phone:${f}
+    //     country:${g}
+    //     city:${h}
+    //     postcode:${i}
+    //     `)
+    // }
+    // )
+    // let obj = {
+    //     firdstname:b,
+    // }
+    nextBtn.forEach((button) => {
+      button.addEventListener("click", () => {
+        changeStep("next");
+let n = document.getElementById("firstName").value;
+sessionStorage.setItem("fnm",n);
+let b= sessionStorage.getItem("fnm");
+// console.log(b)
+let lname = document.getElementById("lastName",).value;
+sessionStorage.setItem("lnm",lname);
+// console.log(lname)
+let c = sessionStorage.getItem("lnm");
+let  dob= document.getElementById("dob").value;
+sessionStorage.setItem("dob",dob);
+let d= sessionStorage.getItem("dob")
+let  email= document.getElementById("email").value;
+sessionStorage.setItem("email",email)
+let e= sessionStorage.getItem("email")
+let phone = document.getElementById("phone").value;
+sessionStorage.setItem("phone",phone)
+let f = sessionStorage.getItem("phone")
+let country = document.getElementById("country").value;
+sessionStorage.setItem("country",country)
+let g = sessionStorage.getItem("country")
+let city = document.getElementById("city").value;
+sessionStorage.setItem("city",city)
+let h = sessionStorage.getItem("city")
+let  postalcode= document.getElementById("postCode").value;
+sessionStorage.setItem("pc",postalcode)
+let i = sessionStorage.getItem("pc")
+      });
+    });
+    prevBtn.forEach((button) => {
+      button.addEventListener("click", () => {
+        changeStep("prev");
+      });
+    });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const inputs = [];
+      form.querySelectorAll("input").forEach((input) => {
+        const { name, value } = input;
+        inputs.push({ name, value });
+      });
+      console.log(inputs);
+      form.reset();
+    });
+    function changeStep(btn) {
+      let index = 0;
+      const active = document.querySelector(".active");
+      index = steps.indexOf(active);
+      steps[index].classList.remove("active");
+      if (btn === "next") {
+        index++;
+      } else if (btn === "prev") {
+        index--;
+      }
+      steps[index].classList.add("active");
+    }
+        // let b= document.getElementById("name").value;
+        // localStorage.setItem("name",JSON.stringify(b));
+        // let n=localStorage.getItem("name");
+        // console.log(n)
+        </script>
+      </section>
+</body>
+</html>

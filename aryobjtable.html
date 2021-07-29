@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.aryobjtable.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.aryobjtable.css">
+<div class="container">
+  <center>
+    <h1> Fill This Form </h1>
+  </center>
+  <p id='error' align="center">
+    <form id='myForm' value='reset'>
+      <div align="center" class="form-group">
+        <label for="firstName">First-Name:- </label>
+        <input type="text" class="form" id='firstName'>
+      </div>
+
+      <div align="center" class="form-group">
+        <label for="lastName">Last-Name:- </label>
+        <input type="text" class="form" id="lastName">
+      </div>
+
+      <div align="center" class="form-group">
+        <label for="DOB"> DATE OF BIRTH:-</label>
+        <input type="date" class="form" id="DOB">
+        <span><input type="text" class="form" disabled></span>
+      </div>
+
+
+      <div align="center" class="form-group">
+        <label for="image">Your Image </label>
+        <input type="file" class="form" id="image" style="display:inline">
+      </div>
+
+
+      <div id="submit">
+        <input type="button" id="button" value="submit"></input>
+      </div>
+    </form>
+</div>
+
+<div class="container">
+  <h2>Resulted Table</h2>
+
+  <table id="list" class="table table-bordered">
+    <thead>
+      <tr>
+        <th> ID </th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Date Of Birth</th>
+        <th> Image </a>
+        </th>
+        <th> </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+</body>
+</html>

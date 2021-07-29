@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+        text-align: center;
+        font-size: 25px;
+    }
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <h1>Personal Details</h1>
+    <br>
+    <br>
+    <form action="Page2.html">
+        <label for="fname">First Name</label>
+        <br>
+        <input type="text" id="f1" placeholder="first name" style="font-size: 20px;">
+        <br>
+        <label for="lname">First Name</label>
+        <br>
+        <input type="text" id="f2" placeholder="last name" style="font-size: 20px;">
+        <br>
+        <label for="pan">Pan Card No</label>
+        <br>
+        <input type="text" id="f3" placeholder="F9XXXXXX" style="font-size: 20px;">
+        <br>
+        <label for="marital">Marital Status</label>
+        <br>
+        <input type="text" id="f4" placeholder="single/married" style="font-size: 20px;">
+        <br>
+        <br>
+        <button type="submit" onclick="page1()" style="font-size: 20px;">Next</button>
+    </form>
+</div>
+    <script>
+var a,b,c,d;
+function page1(){
+    a = document.getElementById("f1").value;
+    b = document.getElementById("f2").value;
+    c = document.getElementById("f3").value;
+    d = document.getElementById("f4").value;
+    sessionStorage.setItem("fn",a);
+    sessionStorage.setItem("ln",b);
+    sessionStorage.setItem("pn",c);
+    sessionStorage.setItem("ms",d);
+}
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+        text-align: center;
+        font-size: 25px;
+    }
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <h1>Address Information</h1>
+    <br>
+    <br>
+    <form action="Page3.html">
+        <label for="flatno">Flat No</label>
+        <br>
+        <input type="text" id="a1" placeholder="flat no" style="font-size: 20px;">
+        <br>
+        <label for="street">Street Name</label>
+        <br>
+        <input type="text" id="a2" placeholder="street name" style="font-size: 20px;">
+        <br>
+        <label for="pin">PinCode</label>
+        <br>
+        <input type="number" id="a3" placeholder="110XXXX" style="font-size: 20px;">
+        <br>
+        <label for="country">Country</label>
+        <br>
+        <select id="a4" style="font-size: 20px;">
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="London">London</option>
+            <option value="New Zealand">New Zealand</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" onclick="page2()" style="font-size: 20px;">Next</button>
+        <br>
+        <br>
+        <button type="button" onclick="history.back()" style="font-size: 20px;">Prev</button>
+    </form>
+</div>
+    <script>
+var a,b,c,d;
+function page2(){
+    a = document.getElementById("a1").value;
+    b = document.getElementById("a2").value;
+    c = document.getElementById("a3").value;
+    d = document.getElementById("a4").value;
+    sessionStorage.setItem("ft",a);
+    sessionStorage.setItem("st",b);
+    sessionStorage.setItem("pc",c);
+    sessionStorage.setItem("co",d);
+}
+// function page3(){
+//     document.getElementById("f1").value = sessionStorage.getItem("fn");
+// }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+        text-align: center;
+        font-size: 25px;
+    }
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <h1>Contact Information</h1>
+    <br>
+    <br>
+    <form action="Final.html">
+        <label for="email">Email Address</label>
+        <br>
+        <input type="text" id="c1" placeholder="abc@domain.com" style="font-size: 20px;">
+        <br>
+        <label for="mobile">Mobile Number</label>
+        <br>
+        <input type="number" id="c2" placeholder="91XXXXXXX" style="font-size: 20px;">
+        <br>
+        <label for="telephone">Telephone Number</label>
+        <br>
+        <input type="number" id="c3" placeholder="324XXXXX" style="font-size: 20px;">
+        <br>
+        <br>
+        <button type="submit" onclick="page3()" style="font-size: 20px;">Next</button>
+        <br>
+        <br>
+        <button type="button" onclick="history.back()" style="font-size: 20px;">Prev</button>
+    </form>
+</div>
+    <script>
+var a,b,c,d;
+function page3(){
+    a = document.getElementById("c1").value;
+    b = document.getElementById("c2").value;
+    c = document.getElementById("c3").value;
+    sessionStorage.setItem("ea",a);
+    sessionStorage.setItem("mn",b);
+    sessionStorage.setItem("tn",c);
+    //window.history.back();
+}
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <h1>Bio-Data</h1>
+    <br>
+    <br>
+        <label for="fname">First Name</label>
+        <br>
+        <input type="text" id="d1" style="font-size: 20px;">
+        <br>
+        <label for="lname">Last Name</label>
+        <br>
+        <input type="text" id="d2" style="font-size: 20px;">
+        <br>
+        <label for="pan">Pan Card No</label>
+        <br>
+        <input type="text" id="d3" style="font-size: 20px;">
+        <br>
+        <label for="marital">Marital Status</label>
+        <br>
+        <input type="text" id="d4" style="font-size: 20px;">
+        <br>
+        <label for="flatno" >Flat No</label>
+        <br>
+        <input type="text" id="d5" style="font-size: 20px;">
+        <br>
+        <label for="street">Street Name</label>
+        <br>
+        <input type="text" id="d6" style="font-size: 20px;">
+        <br>
+        <label for="pin">PinCode</label>
+        <br>
+        <input type="number" id="d7" style="font-size: 20px;">
+        <br>
+        <label for="country">Country</label>
+        <br>
+        <input type="text" id="d8" style="font-size: 20px;">
+        <br>
+        <label for="email">Email Address</label>
+        <br>
+        <input type="text" id="d9" style="font-size: 20px;">
+        <br>
+        <label for="mobile">Mobile Number</label>
+        <br>
+        <input type="number" id="d10" style="font-size: 20px;">
+        <br>
+        <label for="telephone">Telephone Number</label>
+        <br>
+        <input type="number" id="d11" style="font-size: 20px;">
+        <br>
+        <br>
+        <button type="button" onclick="emailSending()" style="font-size: 20px;">Email The Data</button>
+        <br>
+        <!-- <p id="para">abvc</p> -->
+    </div>
+    <script src="email.js"></script>
+    <script src="content.js"></script>
+    <script>
+        var a = sessionStorage.getItem("fn");
+        var b = sessionStorage.getItem("ln");
+        var c = sessionStorage.getItem("pn");
+        var d = sessionStorage.getItem("ms");
+        document.getElementById("d1").value = a;
+        document.getElementById("d2").value = b;
+        document.getElementById("d3").value = c;
+        document.getElementById("d4").value = d;
+        var d = sessionStorage.getItem("ft");
+        var e = sessionStorage.getItem("st");
+        var f = sessionStorage.getItem("pc");
+        var g = sessionStorage.getItem("co");
+        document.getElementById("d5").value = d;
+        document.getElementById("d6").value = e;
+        document.getElementById("d7").value = f;
+        document.getElementById("d8").value = g;
+        var h = sessionStorage.getItem("ea");
+        var i = sessionStorage.getItem("mn");
+        var j = sessionStorage.getItem("tn");
+        document.getElementById("d9").value = h;
+        document.getElementById("d10").value = i;
+        document.getElementById("d11").value = j;
+         var capture = `First name : ${c1}+ \n Last Name : ${c2} \n Pan Card No : ${c3} \n Marital Status : ${c4}\n Flat No : ${c5} \n Street Name : ${c6} \n Pin Code : ${c7} \n Country : ${c8} \n Email Address : ${c9} \n Mobile Number : ${c10} \n Telephone : ${c11}`;
+         document.getElementById("para").innerHTML = capture;
+    </script>
+</body>
+</html>

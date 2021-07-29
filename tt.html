@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-   
+    <p id ='demo'></p>
     <table border width =20% >
         
             <tr>
@@ -16,14 +16,10 @@
                 <th >Age</th>
                 <th>phone</th>
                 <th>gender</th>
-                <th></th>
 ​
             </tr>
         
             <tbody id="tableData"></tbody>
-            <button onclick = "rem()"> 
-                Delete
-            </button> 
         </table>
         <script type="text/javascript">
             var a = [
@@ -41,51 +37,9 @@
                     
                 },
                 {
-                    name: "jay",
-                    age:  20,
-                    phone:123473473,
-                    gender: "M"
-                },
-                {
-                    name: "ram",
+                    name: "aarushi",
                     age:  21,
-                    phone:1232839823,
-                    gender: "M"
-                },
-                {
-                    name: "amneet",
-                    age:  27,
-                    phone:12798327,
-                    gender: "F"
-                },
-                {
-                    name: "arru",
-                    age:  27,
-                    phone:123443,
-                    gender: "F"
-                },
-                {
-                    name: "lavi",
-                    age:  29,
-                    phone:128237,
-                    gender: "F"
-                },
-                {
-                    name: "namita",
-                    age:  19,
                     phone:123443788,
-                    gender: "F"
-                },
-                {
-                    name: "avni",
-                    age:  21,
-                    phone:82193092,
-                    gender: "F"
-                },
-                {
-                    name: "ashi",
-                    age:  22,
-                    phone:1287398217,
                     gender: "F"
                 }
             ];
@@ -98,21 +52,13 @@
                  
                  k+= '<td>' + a[i].phone + '</td>';
                 k+= '<td>' + a[i].gender + '</td>';
-
                 k+= '</tr>';
             }
             k+='</tbody>';
             document.getElementById('tableData').innerHTML = k;
-            
-             
-            rem()
-            {
-            document.getElementsByTagName("tbody")[9].remove();
-            }
-
-
-
-            
+            document.write(`length of array:${a.length}`)
+            const myJSON = JSON.stringify(a);
+            document.getElementById("demo").innerHTML = myJSON;
            
             </script>
 </body>

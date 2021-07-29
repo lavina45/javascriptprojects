@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="slide.css" />
+  </head>
+
+  <body>
+    <div class="carousel">
+      <div class="carousel__item carousel__item--visible">
+        <img src="1.jpg" />
+        
+      </div>
+      <div class="carousel__item">
+        <img src="2.jpg" />
+        
+      </div>
+      <div class="carousel__item">
+        <img src="3.jpg" />
+        
+      </div>
+
+      <div class="carousel__actions">
+        <button id="carousel__button--prev" aria-label="Previous slide"><</button>
+        <button id="carousel__button--next" aria-label="Next slide">></button>
+      </div>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+    
+    </div>
+
+    <script src="slide.js"></script>
+  </body>
+</html>
